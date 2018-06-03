@@ -93,17 +93,21 @@ hr{
   	margin-bottom: 30px;
 }
 
-#boxes .button a{
+#boxes .button{
 	background-color: #282828;
-	color: #FFFFFF;
 	width: 70px;
 	height: 50px;
-	font-size: 20px;
 	display: block;
-	text-decoration: none;
 	text-align: center;
 	line-height: 45px;
 	float: right
+}
+
+#boxes .button a{
+	background-color: #282828;
+	font-size: 20px;
+	text-decoration: none;
+	color: #FFFFFF;
 }
 
 #boxes .button a:hover{
