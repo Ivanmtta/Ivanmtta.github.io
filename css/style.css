@@ -93,6 +93,11 @@ hr{
   	margin-bottom: 30px;
 }
 
+#boxes .box h5{
+	font-weight: 900;
+	color: #9D9D9D;
+}
+
 #boxes .button{
 	background-color: #282828;
 	width: 70px;
@@ -113,6 +118,7 @@ hr{
 #boxes .button a:hover{
 	text-decoration: underline;
 }
+
 
 footer{
 	padding: 20px;
