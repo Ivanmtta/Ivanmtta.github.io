@@ -1,23 +1,23 @@
 function hoverMoonLander(element){
-	element.setAttribute('src', "./img/moonlanderanimated.gif");
+	element.setAttribute('src', "./img/moonanim.gif");
 }
 
 function unhoverMoonLander(element){
-	element.setAttribute('src', "./img/moonlanderstatic.png");
+	element.setAttribute('src', "./img/moonstat.png");
 }
 
 function hoverspacescape(element){
-	element.setAttribute('src', "./img/spacescapeanimated.gif");
+	element.setAttribute('src', "./img/spaceanim.gif");
 }
 
 function unhoverspacescape(element){
-	element.setAttribute('src', "./img/spacescapestatic.png");
+	element.setAttribute('src', "./img/spacestat.png");
 }
 
 function catrunnerhover(element){
-	element.setAttribute('src', "./img/catrunneranimated.gif");
+	element.setAttribute('src', "./img/catanim.gif");
 }
 
 function catrunnerunhover(element){
-	element.setAttribute('src', "./img/catrunnerstatic.png");
+	element.setAttribute('src', "./img/catstat.png");
 }
