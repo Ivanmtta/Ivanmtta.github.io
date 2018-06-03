@@ -19,5 +19,5 @@ function catrunnerhover(element){
 }
 
 function catrunnerunhover(element){
-	element.setAttribute('src', "./img/catstat.PNG");
+	element.setAttribute('src', "./img/catstat.png");
 }
