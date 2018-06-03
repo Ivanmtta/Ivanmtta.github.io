@@ -19,7 +19,7 @@ function hoverspacescape(element){
 }
 
 function unhoverspacescape(element){
-	element.setAttribute('src', "./img/moonlanderstatic.png");
+	element.setAttribute('src', "./img/spacescapestatic.png");
 }
 
 function catrunnerhover(element){
@@ -27,5 +27,5 @@ function catrunnerhover(element){
 }
 
 function catrunnerunhover(element){
-	element.setAttribute('src', "./img/moonlanderstatic.png");
+	element.setAttribute('src', "./img/catrunnerstatic.png");
 }
