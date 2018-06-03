@@ -3,7 +3,7 @@ function hoverMoonLander(element){
 }
 
 function unhoverMoonLander(element){
-	element.setAttribute('src', "./img/moonstat.png");
+	element.setAttribute('src', "./img/moonstat.PNG");
 }
 
 function hoverspacescape(element){
@@ -11,7 +11,7 @@ function hoverspacescape(element){
 }
 
 function unhoverspacescape(element){
-	element.setAttribute('src', "./img/spacestat.png");
+	element.setAttribute('src', "./img/spacestat.PNG");
 }
 
 function catrunnerhover(element){
@@ -19,5 +19,5 @@ function catrunnerhover(element){
 }
 
 function catrunnerunhover(element){
-	element.setAttribute('src', "./img/catstat.png");
+	element.setAttribute('src', "./img/catstat.PNG");
 }
