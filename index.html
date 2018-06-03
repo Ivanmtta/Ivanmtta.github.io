@@ -8,6 +8,7 @@
 		<title>Ivan Mota</title>
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
+	<script type="text/javascript" src="scripts.js"></script>
 	<body>
 		<section id="showcase">
 			<div class="container">
@@ -19,15 +20,26 @@
 		<section id="boxes">
 			<div class="container">
 				<div class="box">
-					<img src="./img/placeholderstatic.png">
+					<img class="static" src="./img/placeholderstatic.png" onmouseover="hover(this);" onmouseout="unhover(this);">
 					<h3>Testing</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dui nunc, vehicula nec vestibulum a, laoreet non nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer in elementum nibh. Proin</p>
+					<button onclick="location.href='http://www.example.com'" type="button" class="button">read</button>
 				</div>
+				<hr>
 				<div class="box">
-					<img src="./img/placeholderstatic.png">
+					<img class="active"  src="./img/placeholderstatic.png" onmouseover="hover(this);" onmouseout="unhover(this);">
 					<h3>Testing</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dui nunc, vehicula nec vestibulum a, laoreet non nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer in elementum nibh. Proin</p>
+					<button onclick="location.href='http://www.example.com'" type="button" class="button">read</button>
 				</div>
+				<hr>
+				<div class="box">
+					<img class="active"  src="./img/placeholderstatic.png" onmouseover="hover(this);" onmouseout="unhover(this);">
+					<h3>Testing</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dui nunc, vehicula nec vestibulum a, laoreet non nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer in elementum nibh. Proin</p>
+					<button onclick="location.href='http://www.example.com'" type="button" class="button">read</button>
+				</div>
+				<hr>
 			</div>
 		</section>
 		<footer>
