@@ -7,7 +7,7 @@ function unhoverMoonLander(element){
 }
 
 function hoverspacescape(element){
-	element.setAttribute('src', "./img/catanim.gif");
+	element.setAttribute('src', "./img/spaceanim.gif");
 }
 
 function unhoverspacescape(element){
