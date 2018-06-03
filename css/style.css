@@ -17,7 +17,7 @@ body{
 
 #showcase{
 	min-height: 400px;
-	color: #000000;
+	color: #282828;
 }
 
 #showcase h1{
@@ -56,6 +56,8 @@ hr{
     border-top: 2px solid #ccc;
     margin: 1em 0;
     padding: 0;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 
 #boxes{
@@ -89,6 +91,23 @@ hr{
   	float:left;
   	margin-right: 30px;
   	margin-bottom: 30px;
+}
+
+#boxes .button a{
+	background-color: #282828;
+	color: #FFFFFF;
+	width: 70px;
+	height: 50px;
+	font-size: 20px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	line-height: 45px;
+	float: right
+}
+
+#boxes .button a:hover{
+	text-decoration: underline;
 }
 
 footer{
