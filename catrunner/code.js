@@ -10,16 +10,28 @@ const JUMPSPACE = 600;
 var points = 0;
 var scoreTime = 0;
 var firstDog = false;
-var playerAnimation = ["Graphics/player1.png", 
-					   "Graphics/player2.png", 
-					   "Graphics/player3.png", 
-					   "Graphics/player4.png", 
-					   "Graphics/player5.png"];
-var dogAnimation = ["Graphics/dog1.png", 
-					"Graphics/dog2.png", 
-					"Graphics/dog3.png", 
-					"Graphics/dog4.png", 
-					"Graphics/dog5.png"];
+
+var playerAnimation = [];
+for(var i = 0; i < 5; i++){
+	playerAnimation[i] = new Image();
+}
+playerAnimation[0].src = "Graphics/player1.png";
+playerAnimation[1].src = "Graphics/player2.png";
+playerAnimation[2].src = "Graphics/player3.png";
+playerAnimation[3].src = "Graphics/player4.png";
+playerAnimation[4].src = "Graphics/player5.png";
+
+
+var dogAnimation = [];
+for(var i = 0; i < 5; i++){
+	dogAnimation[i] = new Image();
+}
+dogAnimation[0].src = "Graphics/dog1.png";
+dogAnimation[1].src = "Graphics/dog2.png";
+dogAnimation[2].src = "Graphics/dog3.png";
+dogAnimation[3].src = "Graphics/dog4.png";
+dogAnimation[4].src = "Graphics/dog5.png";
+
 var animationTime = 0;
 var playerFrame = 0;
 var dogFrame = 0;
@@ -278,13 +290,13 @@ function trackTime(){
 
 function managePlayerAnimation(){
 	if(player.jumping){
-		player.image.src = playerAnimation[3];
+		player.image = playerAnimation[3];
 	}
 	else if(player.falling){
-		player.image.src = playerAnimation[3];
+		player.image = playerAnimation[3];
 	}
 	else{
-		player.image.src = playerAnimation[playerFrame];
+		player.image = playerAnimation[playerFrame];
 		playerFrame ++;
 		if(playerFrame > playerAnimation.length - 1){
 			playerFrame = 0;
@@ -294,7 +306,7 @@ function managePlayerAnimation(){
 
 function manageDogAnimation(){
 	for(i = 0; i < dogs.length; i++){
-		dogs[i].image.src = dogAnimation[dogFrame];
+		dogs[i].image = dogAnimation[dogFrame];
 	}
 	dogFrame ++;
 	if(dogFrame > dogAnimation.length - 1){
