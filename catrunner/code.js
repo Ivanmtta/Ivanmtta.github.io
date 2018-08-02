@@ -2,9 +2,10 @@ var frame = document.getElementById("frame");
 var graphics = frame.getContext("2d");
 
 document.addEventListener("mousedown", click);
+graphics.imageSmoothingEnabled = false;
 
 const FPS = 60;
-const JUMPSPACE = 20;
+const JUMPSPACE = 600;
 
 var points = 0;
 var scoreTime = 0;
@@ -28,7 +29,7 @@ var replayImage = new Image();
 
 var player = {
 	size: 64,
-	x: 100,
+	x: 400,
 	y: 250,
 	jumping: false,
 	falling: true,
@@ -45,7 +46,7 @@ var player = {
 
 var building1 = {
 	x: 0,
-	y: 350,
+	y: 400,
 	size: 2313,
 	speed: 4,
 	image: new Image()
@@ -53,15 +54,15 @@ var building1 = {
 
 var building2 = {
 	x: 2314,
-	y: 350,
+	y: 400,
 	size: 1155,
 	speed: 4,
 	image: new Image()
 };
 
 var fish = {
-	x: 600,
-	y: 75,
+	x: 1032,
+	y: 125,
 	size: 32,
 	xSpeed: 2,
 	ySpeed: 4,
@@ -70,7 +71,7 @@ var fish = {
 
 function dog(x){
 	this.x = x;
-	this.y = 286;
+	this.y = 400-64;
 	this.size = 64;
 	this.speed = 6;
 	this.image = new Image();
@@ -98,7 +99,7 @@ function update(){
 
 function draw(){
 	graphics.clearRect(0, 0, frame.width, frame.height);
-	graphics.drawImage(backImage, 0, 0);
+	graphics.drawImage(backImage, 0, 0, frame.width, frame.height);
 	graphics.drawImage(building1.image, building1.x, building1.y);
 	graphics.drawImage(building2.image, building2.x, building2.y);
 	graphics.drawImage(fish.image, fish.x, fish.y);
@@ -121,14 +122,14 @@ function drawDogs(){
 }
 
 function updateFish(){
-	if(fish.y <= 75){
+	if(fish.y <= 125){
 		fish.ySpeed = 4;
 	}
-	if(fish.y >= 200){
+	if(fish.y >= 275){
 		fish.ySpeed = - 4;
 	}
 	if(fish.x + fish.size < 0){
-		fish.x = 600;
+		fish.x = 1032;
 	}
 	fish.x -= fish.xSpeed;
 	fish.y += fish.ySpeed;
@@ -154,11 +155,12 @@ function checkPlayerCollision(){
 			player.alive = false;
 		}
 	}
+	reduction = 5;
 	if(fish.x + reduction < player.x + player.size - reduction &&
 		fish.x + fish.size - reduction > player.x + reduction &&
 		fish.y + reduction < player.y + player.size - reduction &&
 		fish.y + fish.size - reduction > player.y + reduction){
-		fish.x = 1000;
+		fish.x = 1100;
 		points += 10;
 	}
 }
@@ -195,11 +197,11 @@ function updateBuilding(){
 function updateDogs(){
 	if(dogs.length > 0){
 		if(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size < 0){
-			generatePackOfDogs();
+			generatePacksOfDogs();
 		}
 	}
 	else{
-		generatePackOfDogs();
+		generatePacksOfDogs();
 	}
 
 	for(i = 0; i < dogs.length; i++){
@@ -207,27 +209,56 @@ function updateDogs(){
 	}
 }
 
-function generatePackOfDogs(){
+function generatePacksOfDogs(){
 	dogs = [];
 	if(firstDog){
-		dogs.push(new dog(800));
+		dogs.push(new dog(1500));
 		firstDog = false;
 		return;
 	}
 	var numDogs = Math.floor(Math.random() * 3);
-	switch(numDogs){
-		case 0:
-			dogs.push(new dog(464));
-			break;
-		case 1:
-			dogs.push(new dog(464));
-			dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-			break;
-		case 2:
-			dogs.push(new dog(464));
-			dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-			dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-			break;
+	var firstPack = true;
+	for(var i = 0; i < 2; i++){
+		switch(numDogs){
+			case 0:
+				if(firstPack){
+					dogs.push(new dog(1064));
+					firstPack = false;
+					break;
+				}
+				else{
+					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
+					break;
+				}
+			case 1:
+				if(firstPack){
+					dogs.push(new dog(1064));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					firstPack = false;
+					break;
+				}
+				else{
+					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					firstPack = false;
+					break;
+				}
+			case 2:
+				if(firstPack){
+					dogs.push(new dog(1064));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					firstPack = false;
+					break;
+				}
+				else{
+					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
+					firstPack = false;
+					break;
+				}
+		}
 	}
 }
 
@@ -273,7 +304,7 @@ function manageDogAnimation(){
 
 function restartGame(){
 	player.alive = true;
-	fish.x = 600;
+	fish.x = 1032;
 	points = 0;
 	dogs = [];
 }
