@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel = "stylesheet" href = "./css/style.css">
+		<meta name = "viewport" content = "width = device-width, user-scalable = no">
+		<title>Cellular Automaton</title>
+	</head>
+	<body>
+		<section id = "showcase">
+			<div class = "container">
+				<h1>Ivan <br/> Mota</h1>
+				<p1>software developer / graphic designer</p1>
+			</div>
+			<canvas id = "frame" width = "500" height = "500"></canvas>
+			<div class = "small">
+				<input type = "button" value = "Stop" onclick = "controlGame(this)"/>
+				<input type = "button" value = "Clear" onclick = "clearCells()"/>
+				<input class = "gen" type = "button" value = "Generate" onclick = "generateCells()"/>
+			</div>
+			<div class = "big">
+				<input class = "inc" type = "button" value = "Increase Speed" onclick = "increaseSpeed()"/>
+				<input class = "inc" type = "button" value = "Decrease Speed" onclick = "decreaseSpeed()"/>
+				<p id = "speedL">Speed: 50ms</p>
+			</div>
+			<div class = "showcells">
+				<label class = "switch">
+					<input type = "checkbox" onclick = "manageDeadCells(this)">
+					<span class = "slider"></span>
+				</label>
+				<p>Show Dead Cells</p>
+			</div>
+		</section>
+		<script src = "./src/Cell.js"></script>
+		<script src = "./src/code.js"></script>
+		<footer>
+			<p>Ivan Mota, &copy; 2018</p>
+		</footer>
+	</body>
+</html>
