@@ -7,6 +7,10 @@ frame.addEventListener("mouseup", mouseReleased);
 frame.addEventListener("mousemove", mouseMoved);
 frame.addEventListener("drag", mouseMoved);
 
+frame.addEventListener("touchstart", mousePressed);
+frame.addEventListener("touchend", mouseReleased);
+frame.addEventListener("touchmove", mouseMoved);
+
 var scale = 10;
 var cols = frame.width / scale + 2;
 var rows = frame.height / scale + 2;
@@ -82,7 +86,9 @@ function singleDraw(){
 	var rect = frame.getBoundingClientRect();
 	var x = Math.floor((event.clientX - rect.left) / scale);
 	var y = Math.floor((event.clientY - rect.top) / scale);
-	cells[x + 1][y + 1].alive = true;
+	if(x != 0 && x != cols - 1 && y != 0 && y != rows - 1){
+		cells[x + 1][y + 1].alive = true;
+	}
 }
 
 function mouseMoved(event){
@@ -90,7 +96,9 @@ function mouseMoved(event){
 		var rect = frame.getBoundingClientRect();
 		var x = Math.floor((event.clientX - rect.left) / scale);
 		var y = Math.floor((event.clientY - rect.top) / scale);
-		cells[x + 1][y + 1].alive = true;
+		if(x >= 0 && x < cols - 1 && y >= 0 && y < rows - 1){
+			cells[x + 1][y + 1].alive = true;
+		}
 	}
 }
 
