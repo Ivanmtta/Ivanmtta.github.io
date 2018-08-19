@@ -5,11 +5,9 @@ document.addEventListener("mousedown", click);
 graphics.imageSmoothingEnabled = false;
 
 const FPS = 60;
-const JUMPSPACE = 600;
 
 var points = 0;
 var scoreTime = 0;
-var firstDog = false;
 
 var playerAnimation = [];
 for(var i = 0; i < 5; i++){
@@ -32,6 +30,7 @@ dogAnimation[2].src = "Graphics/dog3.png";
 dogAnimation[3].src = "Graphics/dog4.png";
 dogAnimation[4].src = "Graphics/dog5.png";
 
+var spawnTime = 0;
 var animationTime = 0;
 var playerFrame = 0;
 var dogFrame = 0;
@@ -207,69 +206,32 @@ function updateBuilding(){
 }
 
 function updateDogs(){
-	if(dogs.length > 0){
-		if(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size < 0){
-			generatePacksOfDogs();
-		}
-	}
-	else{
+	if(spawnTime == 100){
 		generatePacksOfDogs();
+		spawnTime = 0;
 	}
-
+	spawnTime ++;
 	for(i = 0; i < dogs.length; i++){
 		dogs[i].x -= dogs[i].speed;
 	}
 }
 
 function generatePacksOfDogs(){
-	dogs = [];
-	if(firstDog){
-		dogs.push(new dog(1500));
-		firstDog = false;
-		return;
-	}
 	var numDogs = Math.floor(Math.random() * 3);
-	var firstPack = true;
 	for(var i = 0; i < 2; i++){
 		switch(numDogs){
 			case 0:
-				if(firstPack){
-					dogs.push(new dog(1064));
-					firstPack = false;
-					break;
-				}
-				else{
-					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
-					break;
-				}
+				dogs.push(new dog(frame.width));
+				break;
 			case 1:
-				if(firstPack){
-					dogs.push(new dog(1064));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					firstPack = false;
-					break;
-				}
-				else{
-					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					firstPack = false;
-					break;
-				}
+				dogs.push(new dog(frame.width));
+				dogs.push(new dog(frame.width + 70));
+				break;
 			case 2:
-				if(firstPack){
-					dogs.push(new dog(1064));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					firstPack = false;
-					break;
-				}
-				else{
-					dogs.push(new dog(dogs[dogs.length - 1].x + JUMPSPACE));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					dogs.push(new dog(dogs[dogs.length - 1].x + dogs[dogs.length - 1].size + 10));
-					firstPack = false;
-					break;
-				}
+				dogs.push(new dog(frame.width));
+				dogs.push(new dog(frame.width + 70));
+				dogs.push(new dog(frame.width + 140));
+				break;
 		}
 	}
 }
