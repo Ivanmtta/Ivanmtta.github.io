@@ -212,7 +212,12 @@ function updateDogs(){
 	}
 	spawnTime ++;
 	for(i = 0; i < dogs.length; i++){
-		dogs[i].x -= dogs[i].speed;
+		if(dogs[i].x + dogs[i].size < 0){
+			dogs.splice(i, 1);
+		}
+		else{
+			dogs[i].x -= dogs[i].speed;
+		}
 	}
 }
 
