@@ -206,7 +206,6 @@ function updateBuilding(){
 }
 
 function updateDogs(){
-	console.log(dogs.length);
 	if(spawnTime == 100){
 		generatePacksOfDogs();
 		spawnTime = 0;
@@ -221,7 +220,6 @@ function updateDogs(){
 }
 
 function generatePacksOfDogs(){
-	console.log("pack generated");
 	var numDogs = Math.floor(Math.random() * 3);
 	switch(numDogs){
 		case 0:
