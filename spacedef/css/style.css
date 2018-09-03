@@ -1,0 +1,48 @@
+body{
+	font-family: Helvetica;
+	font-size: 15px;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: left;
+}
+
+.container{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+#showcase{
+	min-height: 400px;
+	color: #282828;
+}
+
+#showcase h1{
+	font-size: 88px;
+	margin-bottom: 5px;
+	line-height: 80px;
+}
+
+#showcase p1{
+	color: #9D9D9D;
+	display: block;
+	line-height: 20px;
+	font-weight: bolder;
+}
+
+canvas{
+	margin: auto;
+	display: block;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+}
+
+footer{
+	padding: 20px;
+	margin-top: 20px;
+	color: #9D9D9D;
+	text-align: center;
+}
