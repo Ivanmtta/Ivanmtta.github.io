@@ -15,14 +15,14 @@ function Map(){
 			var noiseX = 0;
 			for(var j = 0; j < this.dimension; j++){	
 				var r = noise.simplex2(noiseX, noiseY);
-				this.map[i][j] = new Tile(i * this.scale, j * this.scale, this.scale - 1, r);
+				this.map[i][j] = new Tile(i * this.scale, j * this.scale, this.scale, r);
 				noiseX += this.noiseIncrease;
 			}
 			noiseY += this.noiseIncrease;
-		} 
+		}
 	}
 
-	this.draw = function(){
+	this.draw = function(x, y){
 		for(var i = 0; i < this.map.length; i++){
 			for(var j = 0; j < this.map[0].length; j++){
 				this.map[i][j].draw();
@@ -38,20 +38,22 @@ function Map(){
 		player.freeLeft = true;
 		player.freeRight = true;
 		if(this.map[x + 1][y].type == "water"){
-			this.map[x + 1][y].colliding = true;
 			player.freeRight = false;
 		}
 		if(this.map[x - 1][y].type == "water"){
-			this.map[x - 1][y].colliding = true;
 			player.freeLeft = false;
 		}
 		if(this.map[x][y - 1].type == "water"){
-			this.map[x][y - 1].colliding = true;
 			player.freeUp = false;
 		}
 		if(this.map[x][y + 1].type == "water"){
-			this.map[x][y + 1].colliding = true;
 			player.freeDown = false;
 		}
+	}
+
+	this.getTile = function(x, y){
+		x = Math.floor(x / this.scale);
+		y = Math.floor(y / this.scale);
+		return this.map[x][y];
 	}
 }

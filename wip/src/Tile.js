@@ -4,8 +4,9 @@ function Tile(x, y, size, value){
 	this.y = y;
 	this.size = size;
 	this.value = value;
-	this.colliding = false;
 	this.type = "";
+	this.tics = 0;
+	this.render = true;
 
 	if(this.value > 0.40){
 		this.type = "grass";
@@ -18,19 +19,25 @@ function Tile(x, y, size, value){
 	}
 
 	this.draw = function(){
-		if(this.colliding){
-			graphics.fillStyle = "#ec5162";
-		}
-		else if(this.type == "grass"){
-			graphics.fillStyle = "#69bf6a";
+		if(this.type == "grass"){
+			graphics.drawImage(sprites.grass, this.x, this.y, this.size, this.size);
 		}
 		else if(this.type == "sand"){
-			graphics.fillStyle = "#eedd9b";
+			graphics.drawImage(sprites.sand, this.x, this.y, this.size, this.size);
 		}
 		else{
-			graphics.fillStyle = "#3991ea";
+			if(this.tics == 2){
+				this.render = !this.render;
+				this.tics = 0;
+			}
+			this.tics ++;
+			if(this.render){
+				graphics.drawImage(sprites.water1, this.x, this.y, this.size, this.size);
+			}
+			else{
+				graphics.drawImage(sprites.water2, this.x, this.y, this.size, this.size);
+			}
 		}
-		graphics.fillRect(x, y, size, size);
 		this.colliding = false;
 	}
 }
