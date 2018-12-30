@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="viewport" content="width=device-width">
 		<style>
 			body, canvas{
-				background-color: gray;
 				margin: 0px;
 				padding: 0px;
+			}
+			canvas{
+				background-color: gray;
 			}
 		</style>
 	</head>
 	<body>
-		<canvas id = "frame" width = "1280" height = "720"></canvas>
+		<canvas id = "frame" width = "600" height = "420"></canvas>
 		<script>
 			var frame = document.getElementById("frame");
 			var graphics = frame.getContext("2d");
-			document.addEventListener("touchstart", mousePressed);
-			document.addEventListener("touchend", mouseReleased);
-			document.addEventListener("touchmove", mouseMoved);
+			frame.addEventListener("touchstart", mousePressed);
+			frame.addEventListener("touchend", mouseReleased);
+			frame.addEventListener("touchmove", mouseMoved);
 
 			var joy = {
 				inner: {
@@ -70,14 +72,17 @@
 				joy.inner.size = 100;
 			}
 
-			function mouseReleased(){
+			function mouseReleased(event){
 				joy.outer.size = 0;
 				joy.inner.size = 0;
 			}
 
 			function mouseMoved(event){
-				joy.inner.x = event.touches[0].clientX;
-				joy.inner.y = event.touches[0].clientY;
+				if(event.cancelable){
+					event.preventDefault();
+				}
+				joy.inner.x = event.targetTouches[0].clientX;
+				joy.inner.y = event.targetTouches[0].clientY;
 			}
 
 		</script>
