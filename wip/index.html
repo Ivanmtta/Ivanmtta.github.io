@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<style>
+			body, canvas{
+				background-color: gray;
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
 	</head>
 	<body>
-		<canvas id = "frame" width = "1000" height = "600"></canvas>
-		<script src = "./src/perlin.js"></script>
-		<script src = "./src/SpriteLoader.js"></script>
-		<script src = "./src/Tile.js"></script>
-		<script src = "./src/Map.js"></script>
-		<script src = "./src/Player.js"></script>
-		<script src = "./src/Slot.js"></script>
-		<script src = "./src/Inventory.js"></script>
-		<script src = "./src/sketch.js"></script>
+		<canvas id = "frame" width = "1280" height = "720"></canvas>
+		<script>
+			var frame = document.getElementById("frame");
+			var graphics = frame.getContext("2d");
+			document.addEventListener("touchstart", mousePressed);
+			document.addEventListener("touchend", mouseReleased);
+			document.addEventListener("touchmove", mouseMoved);
+
+			var joy = {
+				inner: {
+					x: 0,
+					y: 0,
+					size: 0
+				},
+				outer: {
+					x: 0,
+					y: 0,
+					size: 0
+				}
+			};
+
+			window.onload = ()=>{
+				gameLoop();
+			}
+
+			function gameLoop(){
+				update();
+				draw();
+				window.requestAnimationFrame(gameLoop);
+			}
+
+			function update(){
+			}
+
+			function draw(){
+				graphics.clearRect(0, 0, frame.width, frame.height);
+
+				graphics.beginPath();
+				graphics.fillStyle = "blue";
+				graphics.arc(joy.outer.x, joy.outer.y, joy.outer.size / 2, 0, 2 * Math.PI);
+				graphics.fill();
+				graphics.closePath();
+
+				graphics.beginPath();
+				graphics.fillStyle = "red";
+				graphics.arc(joy.inner.x, joy.inner.y, joy.inner.size / 2, 0, 2 * Math.PI);
+				graphics.fill();
+				graphics.closePath();
+			}
+
+			function mousePressed(event){
+				joy.outer.x = event.touches[0].clientX;
+				joy.outer.y = event.touches[0].clientY;
+				joy.inner.x = joy.outer.x;
+				joy.inner.y = joy.outer.y;
+				joy.outer.size = 200;
+				joy.inner.size = 100;
+			}
+
+			function mouseReleased(){
+				joy.outer.size = 0;
+				joy.inner.size = 0;
+			}
+
+			function mouseMoved(event){
+				joy.inner.x = event.touches[0].clientX;
+				joy.inner.y = event.touches[0].clientY;
+			}
+
+		</script>
 	</body>
 </html>
