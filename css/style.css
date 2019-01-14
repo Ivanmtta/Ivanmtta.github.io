@@ -108,10 +108,10 @@ hr{
 }
 
 #boxes .google{
-	padding: 8px;
+	padding: 12px;
 	padding-right: 0px;
-	width: 100px;
-	height: 30px;
+	width: 80px;
+	height: 25px;
 	display: block;
 	float: right;
 	margin: 10px;
