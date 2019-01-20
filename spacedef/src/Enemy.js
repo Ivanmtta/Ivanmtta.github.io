@@ -18,6 +18,9 @@ function Enemy(){
 	this.left = false;
 	this.right = false;
 
+	this.deathSound = document.getElementById("eDeath");
+	this.damageSound = document.getElementById("eDamage");
+
 	this.update = function(){
 		this.checkDeath();
 		if(!this.death){
@@ -110,6 +113,7 @@ function Enemy(){
 				hb1.y + hb1.size > this.y - this.size){
 				player.bullets.splice(player.bullets.indexOf(player.bullets[i]), 1);
 				if(this.canDamage && !this.death){
+					this.damageSound.play();
 					this.hitPoints --;
 					this.takingDamage = true;
 					this.canDamage = false;
@@ -147,7 +151,8 @@ function Enemy(){
 	this.checkDeath = function(){
 		if(this.hitPoints == 0){
 			if(this.deathTic == 10){
-				if(this.deathFrame == 0){					
+				if(this.deathFrame == 0){
+					this.deathSound.play();		
 					score ++;
 				}
 				this.deathFrame ++;

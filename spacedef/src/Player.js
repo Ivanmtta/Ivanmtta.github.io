@@ -23,6 +23,11 @@ function Player(){
 	this.damageTic = 0;
 	this.canTakeDamage = true;
 
+	this.damageSound = document.getElementById("eDamage");
+	this.deathSound = document.getElementById("pDeath");
+	this.shootingSound = document.getElementById("las");
+	this.shootingSound.volume = 0.2;
+
 	this.update = function(){
 		this.checkCollisions();
 		this.calculateAngles();
@@ -59,6 +64,7 @@ function Player(){
 	this.handleShooting = function(){
 		if(this.shooting){
 			if(this.shootingTics == 5){
+				this.shootingSound.play();
 				this.bullets.push(new Bullet(this.x - this.size / 2 - 5, this.y - this.size / 2 - 5, mouse.x, mouse.y));
 				this.shootingTics = 0;
 			}
@@ -117,6 +123,7 @@ function Player(){
 				this.canTakeDamage = false;
 				this.damage = true;
 				this.hitPoints --;
+				this.damageSound.play();
 			}
 		}
 		for(var i = 0; i < enemyBullets.length; i++){
@@ -128,12 +135,14 @@ function Player(){
 				this.canTakeDamage = false;
 				this.damage = true;
 				this.hitPoints --;
+				this.damageSound.play();
 			}
 		}
 	}
 
 	this.checkDeath = function(){
 		if(this.hitPoints <= 0){
+			this.deathSound.play();
 			gameOver = true;
 		}
 	}
