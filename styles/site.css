@@ -1,0 +1,130 @@
+h1 {
+	font-size: 90px;
+	line-height: 80px;
+}
+
+body {
+	font-size: 15px;
+}
+
+p {
+	color: #9D9D9D;
+}
+
+hr {
+	height: 5px;
+	border-top: 2px solid #ccc;
+}
+
+canvas{
+	margin: auto;
+	display: block;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.jumbotron {
+	padding: 0px;
+	margin-bottom: 40px;
+	margin-top: 80px;
+}
+
+.nav-item {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	color: white;
+	font-size: 20px;
+	background-color: #282828;
+}
+
+.navbar-nav a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.customButton {
+	background-color: #282828;
+	width: 70px;
+	height: 50px;
+	display: block;
+	text-align: center;
+	line-height: 45px;
+	float: right;
+	margin: 10px;
+}
+
+.imageButton {
+	width: 150px;
+	display: block;
+	float: right;
+	margin: 10px;
+}
+
+.customButton a {
+	background-color: #282828;
+	font-size: 20px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.customButton a:hover {
+	text-decoration: underline;
+}
+
+.appButtonSmall {
+	background-color: #282828;
+	font-size: 20px;
+	text-decoration: none;
+	color: #FFFFFF;
+	border: none;
+	width: 80px;
+	height: 45px;
+	margin: 10px 12px 10px 12px;
+}
+
+.appButtonSmall:focus {
+	outline: 0;
+}
+
+.appButtonSmall:hover {
+	text-decoration: underline;
+}
+
+.appButtonLarge {
+	background-color: #282828;
+	font-size: 20px;
+	text-decoration: none;
+	color: #FFFFFF;
+	border: none;
+	width: 160px;
+	height: 45px;
+	margin: 10px 12px 10px 12px;
+}
+
+.appButtonLarge:focus {
+	outline: 0;
+}
+
+.appButtonLarge:hover {
+	text-decoration: underline;
+}
+
+.languageBox {
+	background-color: #282828;
+	color: white;
+	display: inline-block;
+}
+
+.navbar-toggler:focus {
+	outline: none;
+}
+
+.showCells{
+	width: 25px;
+	height: 25px;
+	border: 4px solid black;
+	margin: 10px 12px 10px 12px;
+}

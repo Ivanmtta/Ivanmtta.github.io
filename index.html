@@ -1,93 +1,132 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
-		<meta charset = "utf-8">
-		<meta name = "viewport" content = "width = device-width">
-		<meta name = "description" content = "Ivan Mota's project portfolio">
-		<meta name = "author" content = "Ivan Mota">
-		<title>Ivan Mota</title>
-		<link rel = "icon" type = "image/ico" href = "./img/icon.ico">
-		<link rel = "stylesheet" href = "./css/style.css">
-	</head>
-	<body>
-		<section id = "showcase">
-			<div class = "container">
-				<h1>Ivan <br/> Mota</h1>
-				<p1>software developer / graphic designer</p1>
-				<p2>hello! my name is Ivan and I like desing and programming, I am a 19 year old indie game developer aiming to create fun interesting games. Currently living in Texas studying Computer Science at UTEP.</p2>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./styles/site.css">
+	<title>Ivan Mota | Software Developer</title>
+</head>
+<body>
+	<div class="container root pb-5">
+		<div class="jumbotron" style="background-color: white;">
+			<h1><b>Ivan <br> Mota</b></h1>
+			<p class="font-weight-bold">software developer / game developer</p>
+		</div>
+		<nav class="navbar navbar-expand-lg p-0 mb-5 pb-5">
+			<button class="navbar-toggler m-0 p-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-caret-square-down" style="width: 50px; height: 50px;"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link p-2" href="index.html"><i class="fas fa-gamepad"></i> games</a>
+					<a class="nav-item nav-link p-2" href="applications.html"><i class="fas fa-laptop-code"></i> applications</a>
+					<a class="nav-item nav-link p-2" href="https://github.com/Ivanmtta"><i class="fab fa-github"></i> github</a>
+					<a class="nav-item nav-link p-2" href="https://play.google.com/store/apps/developer?id=AngryPanda+Apps"><i class="fab fa-google-play"></i> playStore</a>
+					<a class="nav-item nav-link p-2" href="https://linkedin.com/in/ivanmotaaguilar"><i class="fab fa-linkedin"></i> linkedin</a>
+				</div>
 			</div>
-		</section>
-		<section id = "boxes">
-			<div class = "container">
-				<div class = "box">
-					<img id = "imageF" src = "./img/moonLander.gif">
-					<h3>Moon Lander</h3>
-					<p>Simple bullet-hell game made entirely in java using a self-made framework without any extra 3rd party libraries. The objective of the game is to dodge the projectiles moving towards you and survive as much time as you can.</p>
-					<p><b>[Java]</b></p>
-					<div class = "button">
-						<a href = "https://ivanmota.itch.io/moonlander">more</a>
-					</div>
-					<div class = "google">
-						<a href = "https://play.google.com/store/apps/details?id=com.apa.moonlander">
-							<img src = "./img/googleplay.png">
+		</nav>
+		<div class="card-body p-0">
+			<div class="row mb-5">
+				<div class="col-sm-5">
+					<img class="card-img-right img-fluid p-4" style="width: 100%" src="./images/subjectPort.gif">
+				</div>
+				<div class="col-sm-6 mt-5">
+					<h5 class="card-title font-weight-bold">Subject Port</h5>
+					<p class="card-text">Puzzle-platform game set in a mysterious laboratory facilities where you traverse the levels by transporting yourself through physical space by throwing your teleportation device to where you want to move.</p>
+					<div class="languageBox p-2"><i class="fab fa-java"></i> Java</div>
+					<div class = "mt-5 imageButton pt-1">
+						<a href = "https://play.google.com/store/apps/details?id=com.apa.subjectport">
+							<img class = "img-fluid" src = "./images/googleplay.png">
 						</a>
 					</div>
 				</div>
-				<hr>
-				<div class = "box">
-					<img src = "./img/lastSurvivor.gif">
-					<h3>Last Survivor</h3>
-					<p>Top-down shooter game made entirely in java using a self-made framework without any extra 3rd party libraries. The objective of the game is to kill alien invaders and survive as much time as you can.</p>
-					<p><b>[Java]</b></p>
-					<div class = "button">
-						<a href = "https://ivanmota.itch.io/lastsurvivor">more</a>
-					</div>
-				</div>
-				<hr>
-				<div class = "box">
-					<img src = "./img/spaceDefender.gif">
-					<h3>Space Defender</h3>
-					<p>Twist on the arcade game Asteroids written entirely in pure JavaScript and rendered on HTML5 canvas. In this game you move where you shoot. The objective is to kill as many spaceships as you can while you avoid the projectiles.</p>
-					<p><b>[JavaScript]</b></p>
-					<div class = "button">
-						<a href = "https://github.com/Ivanmtta/Space-Defender">github</a>
-					</div>
-					<div class = "button">
-						<a href = "./spacedef/game.html">play</a>
-					</div>
-				</div>
-				<hr>
-				<div class = "box">
-					<img src = "./img/catRunner.gif">
-					<h3>Cat Runner</h3>
-					<p>Infinite runner game written entirely in pure JavaScript and rendered on HTML5 canvas. The objective of the game is to avoid the dogs and get as much points as you can.</p>
-					<p><b>[JavaScript]</b></p>
-					<div class = "button">
-						<a href = "https://github.com/Ivanmtta/Cat-Runner">github</a>
-					</div>
-					<div class = "button">
-						<a href = "./catrunner/game.html">play</a>
-					</div>
-				</div>
-				<hr>
-				<div class = "box">
-					<img src = "./img/gameOfLife.gif">
-					<h3>The Game of Life</h3>
-					<p>My own approach to the cellular automaton devised by the British mathematician John Horton Conway. written entirely in pure JavaScript and rendered on HTML5 canvas.</p>
-					<p><b>[JavaScript]</b></p>
-					<div class = "button">
-						<a href = "https://github.com/Ivanmtta/Conways-Game-of-Life">github</a>
-					</div>
-					<div class = "button">
-						<a href = "./gameoflife/index.html">play</a>
-					</div>
-				</div>
-				<hr>
 			</div>
-		</section>
-		<footer>
-			<p>Ivan Mota, &copy; 2019</p>
+		</div>
+		<hr>
+		<div class="card-body p-0">
+			<div class="row mb-5">
+				<div class="col-sm-5">
+					<img class="card-img-right img-fluid p-4" style="width: 100%" src="./images/moonLander.gif">
+				</div>
+				<div class="col-sm-6 mt-5">
+					<h5 class="card-title font-weight-bold">Moon Lander</h5>
+					<p class="card-text">Simple bullet-hell game made entirely in java using a self-made framework without any extra 3rd party libraries. The objective of the game is to dodge the projectiles moving towards you and survive as much time as you can.</p>
+					<div class="languageBox p-2"><i class="fab fa-java"></i> Java</div>
+					<div class="customButton mt-5">
+						<a href="https://ivanmota.itch.io/moonlander">more</a>
+					</div>
+					<div class = "mt-5 imageButton pt-1">
+						<a href = "https://play.google.com/store/apps/details?id=com.apa.moonlander">
+							<img class = "img-fluid" src = "./images/googleplay.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="card-body p-0">
+			<div class="row mb-5">
+				<div class="col-sm-5">
+					<img class="card-img-right img-fluid p-4" style="width: 100%" src="./images/lastSurvivor.gif">
+				</div>
+				<div class="col-sm-6 mt-5">
+					<h5 class="card-title font-weight-bold">Last Survivor</h5>
+					<p class="card-text">Top-down shooter game made entirely in java using a self-made framework without any extra 3rd party libraries. The objective of the game is to kill alien invaders and survive as much time as you can.</p>
+					<div class="languageBox p-2"><i class="fab fa-java"></i> Java</div>
+					<div class="customButton mt-5">
+						<a href="https://ivanmota.itch.io/lastsurvivor">more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="card-body p-0">
+			<div class="row mb-5">
+				<div class="col-sm-5">
+					<img class="card-img-right img-fluid p-4" style="width: 100%" src="./images/spaceDefender.gif">
+				</div>
+				<div class="col-sm-6 mt-5">
+					<h5 class="card-title font-weight-bold">Space Defender</h5>
+					<p class="card-text">Twist on the arcade game Asteroids written entirely in pure JavaScript and rendered on HTML5 canvas. In this game you move where you shoot. The objective is to kill as many spaceships as you can while you avoid the projectiles.</p>
+					<div class="languageBox p-2"><i class="fab fa-js"></i> JavaScript</div>
+					<div class="customButton mt-5">
+						<a href="https://github.com/Ivanmtta/Space-Defender">github</a>
+					</div>
+					<div class="customButton mt-5">
+						<a href="./spacedefender/game.html">play</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="card-body p-0">
+			<div class="row mb-5">
+				<div class="col-sm-5">
+					<img class="card-img-right img-fluid p-4" style="width: 100%" src="./images/catRunner.gif">
+				</div>
+				<div class="col-sm-6 mt-5">
+					<h5 class="card-title font-weight-bold">Cat Runner</h5>
+					<p class="card-text">Infinite runner game written entirely in pure JavaScript and rendered on HTML5 canvas. The objective of the game is to avoid the dogs and get as much points as you can.</p>
+					<div class="languageBox p-2"><i class="fab fa-js"></i> JavaScript</div>
+					<div class="customButton mt-5">
+						<a href="https://github.com/Ivanmtta/Cat-Runner">github</a>
+					</div>
+					<div class="customButton mt-5">
+						<a href="./catrunner/game.html">play</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<footer class="page-footer font-small pt-5 mt-5">
+			<p class="footer-copyright text-center" >Ivan Mota, © 2019</p>
 		</footer>
-	</body>
+		<script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</div>
+</body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./../styles/site.css">
+	<title>Ivan Mota | Space Defender</title>
+</head>
+<body>
+	<div class="container root">
+		<div class="jumbotron" style="background-color: white;">
+			<h1><b>Ivan <br> Mota</b></h1>
+			<p class="font-weight-bold">software developer / game developer</p>
+		</div>
+		<nav class="navbar navbar-expand-lg p-0 mb-5 pb-5">
+			<button class="navbar-toggler m-0 p-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-caret-square-down" style="width: 50px; height: 50px;"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link p-2" href="./../index.html"><i class="fas fa-gamepad"></i> games</a>
+					<a class="nav-item nav-link p-2" href="./../applications.html"><i class="fas fa-laptop-code"></i> applications</a>
+					<a class="nav-item nav-link p-2" href="https://github.com/Ivanmtta"><i class="fab fa-github"></i> github</a>
+					<a class="nav-item nav-link p-2" href="https://play.google.com/store/apps/developer?id=AngryPanda+Apps"><i class="fab fa-google-play"></i> playStore</a>
+					<a class="nav-item nav-link p-2" href="https://linkedin.com/in/ivanmotaaguilar"><i class="fab fa-linkedin"></i> linkedin</a>
+				</div>
+			</div>
+		</nav>
+		<canvas id = "frame" width = "1000" height = "640"></canvas>
+	</div>
+	<audio id = "backMusic" loop><source src = "./audio/music.wav" type = "audio/wav"></audio>
+	<audio id = "eDeath"><source src = "./audio/enemyDeath.wav" type = "audio/wav"></audio>
+	<audio id = "eDamage"><source src = "./audio/enemyDamage.wav" type = "audio/wav"></audio>
+	<audio id = "las"><source src = "./audio/laser.wav" type = "audio/wav"></audio>
+	<audio id = "pDeath"><source src = "./audio/playerDeath.wav" type = "audio/wav"></audio>
+	<script src = "./src/Bullet.js"></script>
+	<script src = "./src/Player.js"></script>
+	<script src = "./src/EnemyBullet.js"></script>
+	<script src = "./src/Enemy.js"></script>
+	<script src = "./src/Background.js"></script>
+	<script src = "./src/game.js"></script>
+	<footer class="page-footer font-small pt-5 mt-5">
+		<p class="footer-copyright text-center" >Ivan Mota, © 2019</p>
+	</footer>
+	<script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
