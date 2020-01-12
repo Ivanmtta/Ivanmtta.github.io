@@ -1,0 +1,22 @@
+class Vector{
+  
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+
+  set(x, y){
+    this.x = x;
+    this.y = y;
+  }
+
+  add(vector){
+    this.x += vector.x;
+    this.y += vector.y;
+  }
+
+  multiply(vector){
+    this.x *= vector.x;
+    this.y *= vector.y;
+  }
+}
